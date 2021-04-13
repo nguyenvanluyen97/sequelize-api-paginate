@@ -1,11 +1,11 @@
 {
   "name": "sequelize-api-paginate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Sequelize paging for API. Quickly and simple to use",
-  "main": "index.js",
+  "main": "dist/sequelize-api-paginate.js",
   "scripts": {
-    "dev": "node_modules/webpack/bin/webpack.js --mode production --watch --progress --hide-modules",
-    "build": "node_modules/webpack/bin/webpack.js --mode production --progress --hide-modules"
+    "dev": "node node_modules/webpack/bin/webpack.js --mode production --watch --progress --hide-modules",
+    "build": "node node_modules/webpack/bin/webpack.js --mode production --progress"
   },
   "repository": {
     "type": "git",

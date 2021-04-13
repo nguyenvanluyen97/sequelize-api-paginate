@@ -1,0 +1,1 @@
+const sequelizeApiPaginate = require('../index');

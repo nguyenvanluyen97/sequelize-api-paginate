@@ -7,7 +7,8 @@ module.exports = async function(model,payload) {
         order: payload.sortField != null ? [
             [payload.sortField, payload.sortOrder]
         ] : [],
-        where: payload.filters
+        where: payload.filters,
+        raw: true
     });
     result['totalPages'] = Math.ceil(result['count'] / payload.pageSize);
     result['currentPage'] = payload.currentPage;
