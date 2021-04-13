@@ -1,1 +1,2 @@
-const sequelizeApiPaginate = require('../index');
+const sequelizeApiPaginate = require('../dist/sequelize-api-paginate');
+

@@ -1,6 +1,6 @@
 {
   "name": "sequelize-api-paginate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Sequelize paging for API. Quickly and simple to use",
   "main": "dist/sequelize-api-paginate.js",
   "scripts": {
