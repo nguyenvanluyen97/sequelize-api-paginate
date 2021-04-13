@@ -63,7 +63,7 @@ More formally:
 
 Add `sequelizeApiPaginate` for your API like that:
 
-```curl
+```js
 router.get('/listUsers',sequelizeApiPaginate.middle, async function(req, res, next) {
     //Paging with default query in library
     var listUserAfterPaging = await sequelizeApiPaginate.query(req.payload);
