@@ -1,0 +1,25 @@
+{
+  "name": "sequelize-api-paginate",
+  "version": "1.0.0",
+  "description": "Sequelize paging for API. Quickly and simple to use",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenvanluyen97/sequelize-api-paginate.git"
+  },
+  "keywords": [
+    "sequelize",
+    "sequelize-api",
+    "sequelize-paginate",
+    "paging"
+  ],
+  "author": "Kai Nguyen <nguyenvanluyen246@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nguyenvanluyen97/sequelize-api-paginate/issues"
+  },
+  "homepage": "https://github.com/nguyenvanluyen97/sequelize-api-paginate#readme"
+}
