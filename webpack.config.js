@@ -1,6 +1,6 @@
 // webpack.config.js
 
-const {resolve} = require('path')
+const { resolve } = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
