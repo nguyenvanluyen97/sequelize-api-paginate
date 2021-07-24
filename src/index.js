@@ -1,7 +1,7 @@
 'use strict'
 
-const queryModel = require('./src/query-model');
-const middleProcess = require('./src/middle');
+const queryModel = require('./query-model');
+const middleProcess = require('./middle');
 module.exports = {
     query: queryModel,
     middle: middleProcess
