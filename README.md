@@ -66,7 +66,7 @@ Add `sequelizeApiPaginate` for your API like that:
 ```js
 router.get('/listUsers',sequelizeApiPaginate.middle, async function(req, res, next) {
     //Paging with default query in library
-    var listUserAfterPaging = await sequelizeApiPaginate.query(req.payload);
+    var listUserAfterPaging = await sequelizeApiPaginate.query(model.User,req.payload);
 
     res.json({ success: true, contents: listUserAfterPaging });
 });
@@ -130,3 +130,7 @@ The `Response` like that:
     }
 }
 ```
+
+## Noted
+
+Please report bug to be fixed~ Many thanks all
