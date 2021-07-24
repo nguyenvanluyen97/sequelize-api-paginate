@@ -1,6 +1,6 @@
 {
   "name": "sequelize-api-paginate",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Sequelize paging for API. Quickly and simple to use",
   "main": "src/index.js",
   "scripts": {
@@ -27,5 +27,8 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "sequelize": "^6.6.5"
   }
 }
