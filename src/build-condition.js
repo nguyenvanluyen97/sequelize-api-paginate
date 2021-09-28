@@ -63,7 +63,7 @@ module.exports.generateCondition = function generateCondition(params) {
                 break;
             case '@=':
                 conditionReturn[arrLeftRight[0]] = {
-                    [Op.like]: arrLeftRight[1]
+                    [Op.like]: "%" + arrLeftRight[1] + "%"
                 };
                 break;
             case '_=':
@@ -73,7 +73,7 @@ module.exports.generateCondition = function generateCondition(params) {
                 break;
             case '!@=':
                 conditionReturn[arrLeftRight[0]] = {
-                    [Op.notLike]: arrLeftRight[1]
+                    [Op.notLike]: "%" + arrLeftRight[1] + "%"
                 };
                 break;
             case '!_=':
