@@ -82,7 +82,7 @@ module.exports.generateCondition = function generateCondition(params) {
                     [Op.notILike]: "%" + arrLeftRight[1]
                 };
                 break;
-            //chữ hoa
+            //uppercase
             case '@=*':
                 conditionReturn[arrLeftRight[0]] = {
                     [Op.like]: arrLeftRight[1]
