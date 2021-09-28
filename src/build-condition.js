@@ -1,3 +1,23 @@
+
+const listOperators = [
+    { operator: '==', meaning: 'Equals' },
+    { operator: '!=', meaning: 'Not equals' },
+    { operator: '>', meaning: 'Greater than' },
+    { operator: '<', meaning: 'Less than' },
+    { operator: '>=', meaning: 'Greater than or equal to' },
+    { operator: '<=', meaning: 'Less than or equal to' },
+    { operator: '@=', meaning: 'Contains' },
+    { operator: '_=', meaning: 'Starts with' },
+    { operator: '!@=', meaning: 'Does not Contains' },
+    { operator: '!_=', meaning: 'Does not Starts with' },
+    { operator: '@=*', meaning: 'Case-insensitive string Contains' },
+    { operator: '_=*', meaning: 'Case-insensitive string Starts with' },
+    { operator: '==*', meaning: 'Case-insensitive string Equals' },
+    { operator: '!=*', meaning: 'Case-insensitive string Not equals' },
+    { operator: '!@=*', meaning: 'Case-insensitive string does not Contains' },
+    { operator: '!_=*', meaning: 'Case-insensitive string does not Starts with' }
+]
+
 module.exports.generateCondition = function generateCondition(params) {
     try {
         let character = '';
@@ -61,7 +81,7 @@ module.exports.generateCondition = function generateCondition(params) {
                     [Op.notILike]: "%" + arrLeftRight[1]
                 };
                 break;
-                //chữ hoa
+            //chữ hoa
             case '@=*':
                 conditionReturn[arrLeftRight[0]] = {
                     [Op.like]: arrLeftRight[1]
