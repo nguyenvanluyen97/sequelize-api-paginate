@@ -1,4 +1,5 @@
 
+const Op = require("sequelize").Op;
 const listOperators = [
     { operator: '==', meaning: 'Equals' },
     { operator: '!=', meaning: 'Not equals' },
