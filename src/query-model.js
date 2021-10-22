@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = async function (model, payload, includeModels = [], isHierarchy = false) {
+module.exports = async function (model, payload, includeModels = [], isHierarchy = false, raw = true, nest = true) {
     let objQuery = {
         limit: payload.pageSize,
         offset: (payload.currentPage - 1) * payload.pageSize || 0,
@@ -9,8 +9,8 @@ module.exports = async function (model, payload, includeModels = [], isHierarchy
         ] : [],
         include: includeModels,
         where: payload.filters,
-        raw: true,
-        nest: true
+        raw,
+        nest
     };
     if (isHierarchy) {
         objQuery["hierarchy"] = true
