@@ -10,16 +10,51 @@ const listOperators = [
     { operator: '@=', meaning: 'Contains' },
     { operator: '_=', meaning: 'Starts with' },
     { operator: '!@=', meaning: 'Does not Contains' },
-    { operator: '!_=', meaning: 'Does not Starts with' },
-    { operator: '@=*', meaning: 'Case-insensitive string Contains' },
-    { operator: '_=*', meaning: 'Case-insensitive string Starts with' },
-    { operator: '==*', meaning: 'Case-insensitive string Equals' },
-    { operator: '!=*', meaning: 'Case-insensitive string Not equals' },
-    { operator: '!@=*', meaning: 'Case-insensitive string does not Contains' },
-    { operator: '!_=*', meaning: 'Case-insensitive string does not Starts with' }
+    { operator: '!_=', meaning: 'Does not Starts with' }
 ]
 
-module.exports.generateCondition = function generateCondition(params) {
+function generateConditionExtra(params) {
+    try {
+        let character = '';
+        listOperators.forEach(element => {
+            if (params.includes(element.operator)) {
+
+                character = element.operator;
+            }
+        });
+        let arrLeftRight = params.split(character);
+        arrLeftRight[0] = arrLeftRight[0].trim();
+        arrLeftRight[1] = arrLeftRight[1].trim();
+
+        let conditionRight = arrLeftRight[1].split("|");
+
+        let conditionReturn = [];
+
+        let str = getBetweenConfition(arrLeftRight[0]);
+        let arr = str.split("|");
+
+        arr.forEach(element => {
+            conditionRight.forEach(right => {
+                let arrAppend = [element, right.trim()]
+                let obj = genCondition(arrAppend, character);
+                conditionReturn.push(obj);
+            });
+        });
+        return conditionReturn;
+    }
+    catch (ex) {
+        return {};
+    }
+}
+
+function getBetweenConfition(str) {
+    return str.substring(
+        str.indexOf("(") + 1,
+        str.lastIndexOf(")")
+    ).trim();
+}
+
+function generateCondition(params) {
     try {
         let character = '';
         listOperators.forEach(element => {
@@ -32,94 +67,72 @@ module.exports.generateCondition = function generateCondition(params) {
         let arrLeftRight = params.split(character);
         arrLeftRight[0] = arrLeftRight[0].trim();
         arrLeftRight[1] = arrLeftRight[1].trim();
-        let conditionReturn = {};
-        switch (character) {
-            case '==':
-                conditionReturn[arrLeftRight[0]] = arrLeftRight[1];
-                break;
-            case '!=':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.not]: arrLeftRight[1]
-                };
-                break;
-            case '>':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.gt]: arrLeftRight[1]
-                };
-                break;
-            case '<':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.lt]: arrLeftRight[1]
-                };
-                break;
-            case '>=':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.gte]: arrLeftRight[1]
-                };
-                break;
-            case '<=':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.lte]: arrLeftRight[1]
-                };
-                break;
-            case '@=':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.like]: "%" + arrLeftRight[1] + "%"
-                };
-                break;
-            case '_=':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.startsWith]: arrLeftRight[1]
-                };
-                break;
-            case '!@=':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.notLike]: "%" + arrLeftRight[1] + "%"
-                };
-                break;
-            case '!_=':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.notILike]: "%" + arrLeftRight[1]
-                };
-                break;
-            //uppercase
-            case '@=*':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.like]: arrLeftRight[1]
-                };
-                break;
-            case '_=*':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.like]: arrLeftRight[1]
-                };
-                break;
-            case '==*':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.like]: arrLeftRight[1]
-                };
-                break;
-            case '!=*':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.like]: arrLeftRight[1]
-                };
-                break;
-            case '!@=*':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.like]: arrLeftRight[1]
-                };
-                break;
-            case '!_=*':
-                conditionReturn[arrLeftRight[0]] = {
-                    [Op.like]: arrLeftRight[1]
-                };
-                break;
-            default:
-                break;
-        }
+        let conditionReturn = genCondition(arrLeftRight, character);
 
         return conditionReturn;
     } catch (ex) {
-        console.log('error', ex);
         return {};
     }
 }
+
+function genCondition(arrLeftRight, character) {
+    let conditionReturn = {};
+    switch (character) {
+        case '==':
+            conditionReturn[arrLeftRight[0]] = arrLeftRight[1];
+            break;
+        case '!=':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.not]: arrLeftRight[1]
+            };
+            break;
+        case '>':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.gt]: arrLeftRight[1]
+            };
+            break;
+        case '<':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.lt]: arrLeftRight[1]
+            };
+            break;
+        case '>=':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.gte]: arrLeftRight[1]
+            };
+            break;
+        case '<=':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.lte]: arrLeftRight[1]
+            };
+            break;
+        case '@=':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.like]: "%" + arrLeftRight[1] + "%"
+            };
+            break;
+        case '_=':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.startsWith]: arrLeftRight[1]
+            };
+            break;
+        case '!@=':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.notLike]: "%" + arrLeftRight[1] + "%"
+            };
+            break;
+        case '!_=':
+            conditionReturn[arrLeftRight[0]] = {
+                [Op.notILike]: "%" + arrLeftRight[1]
+            };
+            break;
+        default:
+            break;
+    }
+    return conditionReturn;
+}
+
+module.exports = {
+    generateCondition: generateCondition,
+    generateConditionExtra: generateConditionExtra
+};

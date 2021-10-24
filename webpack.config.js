@@ -14,5 +14,6 @@ module.exports = {
         new UglifyJsPlugin({
             exclude: [/\.min\.js$/gi] // skip pre-minified libs
         })
-    ]
+    ],
+    "target": "node"
 }

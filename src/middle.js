@@ -1,8 +1,8 @@
 'use strict'
 const buildCondition = require('./build-condition')
+const Op = require("sequelize").Op;
 
-
-module.exports = function(req, res, next) {
+module.exports = function (req, res, next) {
     const payload = {
         pageSize: req.query.pageSize || null,
         sortField: req.query.sortField || null,
@@ -11,16 +11,19 @@ module.exports = function(req, res, next) {
         filters: req.query.filters || null
     }
     if (payload.filters != null) {
-        const condition = {};
+        let condition = new Object;
 
         let arrFilters = payload.filters != null ? payload.filters.split(',') : [];
 
         arrFilters.forEach(element => {
-            let objCondition = buildCondition.generateCondition(element);
-            let allKeys = Object.keys(objCondition);
-            allKeys.forEach(key => {
-                condition[key] = objCondition[key];
-            });
+            if (element.includes('|')) {
+                let objCondition = buildCondition.generateConditionExtra(element);
+                condition = {
+                    [Op.or]: objCondition
+                }
+            } else {
+                condition = buildCondition.generateCondition(element);
+            }
         });
 
         payload.filters = condition;
@@ -39,7 +42,3 @@ module.exports = function(req, res, next) {
     req.payload = payload;
     next();
 }
-
-
-
-

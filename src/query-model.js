@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = async function (model, payload, includeModels = [], isHierarchy = false, raw = true, nest = true) {
+module.exports = async function (model, payload, includeModels = [], raw = true, nest = true, isHierarchy = false) {
     let objQuery = {
         limit: payload.pageSize,
         offset: (payload.currentPage - 1) * payload.pageSize || 0,
