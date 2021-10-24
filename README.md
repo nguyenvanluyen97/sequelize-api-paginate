@@ -1,5 +1,6 @@
 # sequelize-api-paginate
- Sequelize paging for API. Quickly and simple to use
+
+Sequelize paging for API. Quickly and simple to use
 
 ## Install
 
@@ -7,9 +8,8 @@
 
 ## Usage
 
-
 ```js
-const sequelizeApiPaginate = require('sequelize-api-paginate');
+const sequelizeApiPaginate = require("sequelize-api-paginate");
 ```
 
 ## Send a request
@@ -27,77 +27,88 @@ GET /GetPosts
 ```
 
 More formally:
-* `sortField` is a comma-delimited ordered list of property names to sort by
-* `filters` is a comma-delimited list of `{Name}{Operator}{Value}` where
-    * `{Name}` is the name of a property with the Sieve attribute or the name of a custom filter method for TEntity
-        * You can also have multiple names (for OR logic) by enclosing them in brackets and using a pipe delimiter, eg. `(LikeCount|CommentCount)>10` asks if `LikeCount` or `CommentCount` is `>10`
-    * `{Operator}` is one of the [Operators](#operators)
-    * `{Value}` is the value to use for filtering
-        * You can also have multiple values (for OR logic) by using a pipe delimiter, eg. `Title@=new|hot` will return posts with titles that contain the text "`new`" or "`hot`"
-* `currentPage` is the number of page to return
-* `pageSize` is the number of items returned per page 
 
+- `sortField` is a comma-delimited ordered list of property names to sort by
+- `filters` is a comma-delimited list of `{Name}{Operator}{Value}` where
+  - `{Name}` is the name of a property with the Sieve attribute or the name of a custom filter method for TEntity
+    - You can also have multiple names (for OR logic) by enclosing them in brackets and using a pipe delimiter, eg. `(LikeCount|CommentCount)>10` asks if `LikeCount` or `CommentCount` is `>10`
+  - `{Operator}` is one of the [Operators](#operators)
+  - `{Value}` is the value to use for filtering
+    - You can also have multiple values (for OR logic) by using a pipe delimiter, eg. `Title@=new|hot` will return posts with titles that contain the text "`new`" or "`hot`"
+- `currentPage` is the number of page to return
+- `pageSize` is the number of items returned per page
 
 ## Operators
-| Operator   | Meaning                  |
-|------------|--------------------------|
-| `==`       | Equals                   |
-| `!=`       | Not equals               |
-| `>`        | Greater than             |
-| `<`        | Less than                |
-| `>=`       | Greater than or equal to |
-| `<=`       | Less than or equal to    |
-| `@=`       | Contains                 |
-| `_=`       | Starts with              |
-| `!@=`      | Does not Contains        |
-| `!_=`      | Does not Starts with     |
-| `@=*`      | Case-insensitive string Contains |
-| `_=*`      | Case-insensitive string Starts with |
-| `==*`      | Case-insensitive string Equals |
-| `!=*`      | Case-insensitive string Not equals |
-| `!@=*`     | Case-insensitive string does not Contains |
-| `!_=*`     | Case-insensitive string does not Starts with |
 
+| Operator | Meaning                  |
+| -------- | ------------------------ |
+| `==`     | Equals                   |
+| `!=`     | Not equals               |
+| `>`      | Greater than             |
+| `<`      | Less than                |
+| `>=`     | Greater than or equal to |
+| `<=`     | Less than or equal to    |
+| `@=`     | Contains                 |
+| `_=`     | Starts with              |
+| `!@=`    | Does not Contains        |
+| `!_=`    | Does not Starts with     |
 
 ## Example
 
 Add `sequelizeApiPaginate` for your API like that:
 
 ```js
-router.get('/listUsers',sequelizeApiPaginate.middle, async function(req, res, next) {
+router.get(
+  "/listUsers",
+  sequelizeApiPaginate.middle,
+  async function (req, res, next) {
     //Paging with default query in library
-    var listUserAfterPaging = await sequelizeApiPaginate.query(model.User,req.payload);
+    let includes = [];
+    let hierarchy = false;
+    let raw = true;
+    let nest = true;
+
+    var listUserAfterPaging = await sequelizeApiPaginate.query(
+      model.User,
+      req.payload,
+      includes, //not required,
+      hierarchy, //not required
+      raw, //not required
+      nest //not required
+    );
 
     res.json({ success: true, contents: listUserAfterPaging });
-});
+  }
+);
 ```
+
 For middleware it auto generate payload base on params pass in.
 
-The `Params` like that: 
+The `Params` like that:
 
 ```js
 const payload = {
-            pageSize: req.query.pageSize || null,         //Default: 10
-            sortField: req.query.sortField || null,       //Default: 1
-            sortOrder: req.query.sortOrder || null,
-            currentPage: req.query.currentPage || null,   //Default: 1
-            filters: req.query.filters || null            
-        }
+  pageSize: req.query.pageSize || null, //Default: 10
+  sortField: req.query.sortField || null, //Default: 1
+  sortOrder: req.query.sortOrder || null,
+  currentPage: req.query.currentPage || null, //Default: 1
+  filters: req.query.filters || null,
+};
 ```
 
 Example call `API` with `Payload`:
 
 ```js
 const payload = {
-            pageSize: 3,         //Default: 10
-            sortField: 'created',       //Default: 1
-            sortOrder: 'desc',
-            currentPage: 1,   
-            filters: 'gender==1'           
-        }
+  pageSize: 3, //Default: 10
+  sortField: "created", //Default: 1
+  sortOrder: "desc",
+  currentPage: 1,
+  filters: "gender==1",
+};
 ```
 
-Endpoint of API like that: 
+Endpoint of API like that:
 
 `http://localhost:3000/listUsers?currentPage=1&pageSize=3&sortField=created&sortOrder=desc&filters=gender%3D%3D1`
 
