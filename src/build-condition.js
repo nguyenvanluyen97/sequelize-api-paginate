@@ -77,52 +77,57 @@ function generateCondition(params) {
 
 function genCondition(arrLeftRight, character) {
     let conditionReturn = {};
+
+    let conditionLeft = arrLeftRight[0];
+    if (conditionLeft.includes('.')) {
+        conditionLeft = "$" + conditionLeft + "$";
+    }
     switch (character) {
         case '==':
-            conditionReturn[arrLeftRight[0]] = arrLeftRight[1];
+            conditionReturn[conditionLeft] = arrLeftRight[1];
             break;
         case '!=':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.not]: arrLeftRight[1]
             };
             break;
         case '>':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.gt]: arrLeftRight[1]
             };
             break;
         case '<':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.lt]: arrLeftRight[1]
             };
             break;
         case '>=':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.gte]: arrLeftRight[1]
             };
             break;
         case '<=':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.lte]: arrLeftRight[1]
             };
             break;
         case '@=':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.like]: "%" + arrLeftRight[1] + "%"
             };
             break;
         case '_=':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.startsWith]: arrLeftRight[1]
             };
             break;
         case '!@=':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.notLike]: "%" + arrLeftRight[1] + "%"
             };
             break;
         case '!_=':
-            conditionReturn[arrLeftRight[0]] = {
+            conditionReturn[conditionLeft] = {
                 [Op.notILike]: "%" + arrLeftRight[1]
             };
             break;
