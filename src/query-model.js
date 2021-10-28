@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = async function (model, payload, includeModels = [], isHierarchy = false, raw = true, nest = true) {
+module.exports = async function (model, payload, includeModels = [], isHierarchy = false, raw = true, nest = true, distinct = false) {
     let objQuery = {
         limit: payload.pageSize,
         offset: (payload.currentPage - 1) * payload.pageSize || 0,
@@ -12,9 +12,10 @@ module.exports = async function (model, payload, includeModels = [], isHierarchy
         raw,
         nest
     };
-    if (isHierarchy) {
+    if (distinct)
+        objQuery["distinct"] = distinct
+    if (isHierarchy)
         objQuery["hierarchy"] = true
-    }
     var result = await model.findAndCountAll(objQuery);
     result['totalPages'] = Math.ceil(result['count'] / payload.pageSize);
     result['currentPage'] = payload.currentPage;
