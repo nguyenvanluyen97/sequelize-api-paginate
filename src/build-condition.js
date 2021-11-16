@@ -10,7 +10,8 @@ const listOperators = [
     { operator: '@=', meaning: 'Contains' },
     { operator: '_=', meaning: 'Starts with' },
     { operator: '!@=', meaning: 'Does not Contains' },
-    { operator: '!_=', meaning: 'Does not Starts with' }
+    { operator: '!_=', meaning: 'Does not Starts with' },
+    { operator: '[]', meaning: 'Only datetime, date between two date' }
 ]
 
 function generateConditionExtra(params) {
@@ -129,6 +130,15 @@ function genCondition(arrLeftRight, character) {
         case '!_=':
             conditionReturn[conditionLeft] = {
                 [Op.notILike]: "%" + arrLeftRight[1]
+            };
+            break;
+        case '[]':
+            const valSearch = getBetweenConfition(arrLeftRight[1]);
+            const arrStartEnd = valSearch.split('-');
+            const start = new Date(arrStartEnd[0]);
+            const end = new Date(arrStartEnd[1]);
+            conditionReturn[conditionLeft] = {
+                [Op.between]: [start, end]
             };
             break;
         default:
