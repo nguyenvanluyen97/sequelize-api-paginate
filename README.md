@@ -40,19 +40,19 @@ More formally:
 
 ## Operators
 
-| Operator | Meaning                              | Example                             |
-| -------- | ------------------------------------ | ----------------------------------- |
-| `==`     | Equals                               |                                     |
-| `!=`     | Not equals                           |                                     |
-| `>`      | Greater than                         |                                     |
-| `<`      | Less than                            |                                     |
-| `>=`     | Greater than or equal to             |                                     |
-| `<=`     | Less than or equal to                |                                     |
-| `@=`     | Contains                             |                                     |
-| `_=`     | Starts with                          |                                     |
-| `!@=`    | Does not Contains                    |                                     |
-| `!_=`    | Does not Starts with                 |                                     |
-| `[]`     | Only datetime, date between two date | created_at[](2021/11/05-2021/11/12) |
+| Operator | Meaning                              | Example                               |
+| -------- | ------------------------------------ | ------------------------------------- |
+| `==`     | Equals                               |                                       |
+| `!=`     | Not equals                           |                                       |
+| `>`      | Greater than                         |                                       |
+| `<`      | Less than                            |                                       |
+| `>=`     | Greater than or equal to             |                                       |
+| `<=`     | Less than or equal to                |                                       |
+| `@=`     | Contains                             |                                       |
+| `_=`     | Starts with                          |                                       |
+| `!@=`    | Does not Contains                    |                                       |
+| `!_=`    | Does not Starts with                 |                                       |
+| `[]`     | Only datetime, date between two date | `created_at[](2021/11/05-2021/11/12)` |
 
 ## Example
 

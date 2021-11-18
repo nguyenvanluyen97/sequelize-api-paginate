@@ -19,10 +19,12 @@ module.exports = function (req, res, next) {
             if (element.includes('|')) {
                 let objCondition = buildCondition.generateConditionExtra(element);
                 condition = {
+                    ...condition,
                     [Op.or]: objCondition
                 }
             } else {
-                condition = buildCondition.generateCondition(element);
+                let conditionNotOr = buildCondition.generateCondition(element);
+                condition = { ...condition, ...conditionNotOr };
             }
         });
 
