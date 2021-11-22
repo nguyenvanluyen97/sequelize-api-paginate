@@ -83,57 +83,62 @@ function genCondition(arrLeftRight, character) {
     if (conditionLeft.includes('.')) {
         conditionLeft = "$" + conditionLeft + "$";
     }
+
+    let conditionRight = arrLeftRight[1];
+    if (conditionRight == 'null')
+        conditionRight = null;
+
     switch (character) {
         case '==':
-            conditionReturn[conditionLeft] = arrLeftRight[1];
+            conditionReturn[conditionLeft] = conditionRight;
             break;
         case '!=':
             conditionReturn[conditionLeft] = {
-                [Op.not]: arrLeftRight[1]
+                [Op.not]: conditionRight
             };
             break;
         case '>':
             conditionReturn[conditionLeft] = {
-                [Op.gt]: arrLeftRight[1]
+                [Op.gt]: conditionRight
             };
             break;
         case '<':
             conditionReturn[conditionLeft] = {
-                [Op.lt]: arrLeftRight[1]
+                [Op.lt]: conditionRight
             };
             break;
         case '>=':
             conditionReturn[conditionLeft] = {
-                [Op.gte]: arrLeftRight[1]
+                [Op.gte]: conditionRight
             };
             break;
         case '<=':
             conditionReturn[conditionLeft] = {
-                [Op.lte]: arrLeftRight[1]
+                [Op.lte]: conditionRight
             };
             break;
         case '@=':
             conditionReturn[conditionLeft] = {
-                [Op.like]: "%" + arrLeftRight[1] + "%"
+                [Op.like]: "%" + conditionRight + "%"
             };
             break;
         case '_=':
             conditionReturn[conditionLeft] = {
-                [Op.startsWith]: arrLeftRight[1]
+                [Op.startsWith]: conditionRight
             };
             break;
         case '!@=':
             conditionReturn[conditionLeft] = {
-                [Op.notLike]: "%" + arrLeftRight[1] + "%"
+                [Op.notLike]: "%" + conditionRight + "%"
             };
             break;
         case '!_=':
             conditionReturn[conditionLeft] = {
-                [Op.notILike]: "%" + arrLeftRight[1]
+                [Op.notILike]: "%" + conditionRight
             };
             break;
         case '[]':
-            const valSearch = getBetweenConfition(arrLeftRight[1]);
+            const valSearch = getBetweenConfition(conditionRight);
             const arrStartEnd = valSearch.split('-');
             const start = new Date(arrStartEnd[0]);
             const end = new Date(arrStartEnd[1]);
