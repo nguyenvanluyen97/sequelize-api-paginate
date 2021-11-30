@@ -119,7 +119,7 @@ function genCondition(arrLeftRight, character) {
             break;
         case '@=':
             conditionReturn[conditionLeft] = {
-                [Op.like]: "%" + conditionRight + "%"
+                [Op.iLike]: "%" + conditionRight + "%"
             };
             break;
         case '_=':
