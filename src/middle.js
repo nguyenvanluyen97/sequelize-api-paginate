@@ -20,14 +20,12 @@ module.exports = function (req, res, next) {
         arrFilters.forEach(element => {
             if (element.includes('|')) {
                 let objCondition = buildCondition.generateConditionExtra(element);
-                condition = {
-                    ...condition,
+                let conditionNotOr = {
                     [Op.or]: objCondition
-                }
+                };
                 conditionCheckedChild.push(conditionNotOr);
             } else {
                 let conditionNotOr = buildCondition.generateCondition(element);
-                condition = { ...condition, ...conditionNotOr };
                 conditionCheckedChild.push(conditionNotOr);
             }
         });
