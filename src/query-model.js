@@ -10,7 +10,8 @@ module.exports = async function (model, payload, includeModels = [], isHierarchy
         include: includeModels,
         where: payload.filters,
         raw,
-        nest
+        nest,
+        subQuery: false
     };
     if (distinct)
         objQuery["distinct"] = distinct
