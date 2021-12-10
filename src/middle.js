@@ -15,6 +15,8 @@ module.exports = function (req, res, next) {
 
         let arrFilters = payload.filters != null ? payload.filters.split(',') : [];
 
+        let conditionCheckedChild = [];
+
         arrFilters.forEach(element => {
             if (element.includes('|')) {
                 let objCondition = buildCondition.generateConditionExtra(element);
@@ -22,11 +24,17 @@ module.exports = function (req, res, next) {
                     ...condition,
                     [Op.or]: objCondition
                 }
+                conditionCheckedChild.push(conditionNotOr);
             } else {
                 let conditionNotOr = buildCondition.generateCondition(element);
                 condition = { ...condition, ...conditionNotOr };
+                conditionCheckedChild.push(conditionNotOr);
             }
         });
+
+        condition = {
+            [Op.and]: conditionCheckedChild
+        }
 
         payload.filters = condition;
     } else {
