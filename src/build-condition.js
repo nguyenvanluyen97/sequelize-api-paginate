@@ -15,6 +15,7 @@ const listOperators = [
 ]
 
 function generateConditionExtra(params) {
+
     try {
         let character = '';
         listOperators.forEach(element => {
@@ -24,15 +25,23 @@ function generateConditionExtra(params) {
             }
         });
         let arrLeftRight = params.split(character);
+
         arrLeftRight[0] = arrLeftRight[0].trim();
         arrLeftRight[1] = arrLeftRight[1].trim();
 
-        let conditionRight = arrLeftRight[1].split("|");
+        let conditionRight = arrLeftRight[1].split("(").join("");
+        conditionRight = conditionRight.split(")").join("");
+        conditionRight = conditionRight.split("|");
 
         let conditionReturn = [];
+        let arr = [];
+        if (arrLeftRight[0].includes("|")) {
+            let str = getBetweenConfition(arrLeftRight[0]);
+            arr = str.split("|");
+        } else {
+            arr.push(arrLeftRight[0]);
+        }
 
-        let str = getBetweenConfition(arrLeftRight[0]);
-        let arr = str.split("|");
 
         arr.forEach(element => {
             conditionRight.forEach(right => {
@@ -44,6 +53,7 @@ function generateConditionExtra(params) {
         return conditionReturn;
     }
     catch (ex) {
+        console.log(ex)
         return {};
     }
 }
@@ -77,6 +87,7 @@ function generateCondition(params) {
 }
 
 function genCondition(arrLeftRight, character) {
+
     let conditionReturn = {};
 
     let conditionLeft = arrLeftRight[0];

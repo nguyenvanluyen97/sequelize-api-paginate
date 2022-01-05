@@ -111,7 +111,7 @@ const payload = {
 
 Endpoint of API like that:
 
-`http://localhost:3000/listUsers?currentPage=1&pageSize=3&sortField=created&sortOrder=desc&filters=gender%3D%3D1`
+`http://localhost:3000/listUsers?currentPage=1&pageSize=3&sortField=created&sortOrder=desc&filters=gender==1`
 
 The `Response` like that:
 

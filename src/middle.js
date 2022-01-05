@@ -15,10 +15,11 @@ module.exports = function (req, res, next) {
 
         let arrFilters = payload.filters != null ? payload.filters.split(',') : [];
 
+
         let conditionCheckedChild = [];
 
         arrFilters.forEach(element => {
-            if (element.includes('|')) {
+            if (element.includes('|') || (element.includes('(') && element.includes(')'))) {
                 let objCondition = buildCondition.generateConditionExtra(element);
                 let conditionNotOr = {
                     [Op.or]: objCondition
