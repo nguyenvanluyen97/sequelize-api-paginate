@@ -19,7 +19,7 @@ module.exports = function (req, res, next) {
         let conditionCheckedChild = [];
 
         arrFilters.forEach(element => {
-            if (element.includes('|') || (element.includes('(') && element.includes(')'))) {
+            if (element.includes('|')) {
                 let objCondition = buildCondition.generateConditionExtra(element);
                 let conditionNotOr = {
                     [Op.or]: objCondition
