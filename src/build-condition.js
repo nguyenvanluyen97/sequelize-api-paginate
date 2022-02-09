@@ -1,5 +1,7 @@
 
 const Op = require("sequelize").Op;
+const moment = require("moment");
+
 const listOperators = [
     { operator: '==', meaning: 'Equals' },
     { operator: '!=', meaning: 'Not equals' },
@@ -163,7 +165,19 @@ function genCondition(arrLeftRight, character) {
     return conditionReturn;
 }
 
+function getCorrectFormatTime(value) {
+    const arrayFormat = ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"];
+    for (let index = 0; index < arrayFormat.length; index++) {
+        const element = arrayFormat[index];
+        if (moment(value, element, true).isValid()) {
+            return element;
+        }
+    }
+    return null;
+}
+
 module.exports = {
     generateCondition: generateCondition,
-    generateConditionExtra: generateConditionExtra
+    generateConditionExtra: generateConditionExtra,
+    getCorrectFormatTime: getCorrectFormatTime
 };

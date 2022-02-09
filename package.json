@@ -1,8 +1,8 @@
 {
   "name": "sequelize-api-paginate",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Sequelize paging for API. Quickly and simple to use",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "node node_modules/webpack/bin/webpack.js --mode production --watch --progress --hide-modules",
     "build": "node node_modules/webpack/bin/webpack.js --mode production --progress"
@@ -29,6 +29,7 @@
     "webpack-cli": "^4.6.0"
   },
   "dependencies": {
+    "babel-loader": "^8.2.3",
     "fs": "^0.0.1-security",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.6.5"

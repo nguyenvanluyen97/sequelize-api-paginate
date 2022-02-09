@@ -1,6 +1,7 @@
 'use strict'
 const buildCondition = require('./build-condition')
 const Op = require("sequelize").Op;
+const moment = require("moment");
 
 module.exports = function (req, res, next) {
     const payload = {
@@ -8,38 +9,87 @@ module.exports = function (req, res, next) {
         sortField: req.query.sortField || null,
         sortOrder: req.query.sortOrder || null,
         currentPage: req.query.currentPage || null,
-        filters: req.query.filters || null
+        filters: req.query.filters || null,
+        rawFilter: null,
+        dateField: []
     }
     if (payload.filters != null) {
+        let indexOp = 0;
         let condition = new Object;
-
         let arrFilters = payload.filters != null ? payload.filters.split(',') : [];
-
-
         let conditionCheckedChild = [];
-
         arrFilters.forEach(element => {
             if (element.includes('|')) {
                 let objCondition = buildCondition.generateConditionExtra(element);
+
+                if (objCondition.length > 0) {
+                    for (const obj of objCondition) {
+                        if (moment(obj[Object.keys(obj)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()
+                            || moment(obj[Object.keys(obj)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true)) {
+                            payload.dateField.push({
+                                "opType": "or",
+                                "indexOp": indexOp,
+
+                            });
+                            break;
+                        }
+                    }
+
+                } else {
+                    if (moment(objCondition[Object.keys(objCondition)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()
+                        || moment(objCondition[Object.keys(objCondition)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true)) {
+                        payload.dateField.push({
+                            "opType": "none",
+                            "indexOp": indexOp,
+
+                        });
+
+                    }
+                }
                 let conditionNotOr = {
                     [Op.or]: objCondition
                 };
                 conditionCheckedChild.push(conditionNotOr);
+
             } else {
                 let conditionNotOr = buildCondition.generateCondition(element);
+
+                if (conditionNotOr.length > 0) {
+                    for (const obj of conditionNotOr) {
+                        if (moment(obj[Object.keys(obj)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()
+                            || moment(obj[Object.keys(obj)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true)) {
+                            payload.dateField.push({
+                                "opType": "and",
+                                "indexOp": indexOp,
+
+                            });
+                            break;
+                        }
+                    }
+                } else {
+                    if (moment(conditionNotOr[Object.keys(conditionNotOr)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()
+                        || moment(conditionNotOr[Object.keys(conditionNotOr)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true)) {
+                        payload.dateField.push({
+                            "opType": "none",
+                            "indexOp": indexOp,
+
+                        });
+
+                    }
+                }
+
                 conditionCheckedChild.push(conditionNotOr);
             }
+            indexOp += 1;
         });
 
         condition = {
             [Op.and]: conditionCheckedChild
         }
-
         payload.filters = condition;
     } else {
         payload.filters = {};
     }
-
     //Fixed string
     payload.pageSize = Number(payload.pageSize)
 

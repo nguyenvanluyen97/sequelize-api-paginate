@@ -8,12 +8,30 @@ module.exports = {
     output: {
         path: resolve(__dirname, 'dist'),
         filename: 'sequelize-api-paginate.js',
-        library: 'sequelizeApiPaginate'
+        //library: 'sequelizeApiPaginate'
     },
-    plugins: [
-        new UglifyJsPlugin({
-            exclude: [/\.min\.js$/gi] // skip pre-minified libs
-        })
-    ],
+    optimization: {
+        minimize: true
+    },
+    resolve: {
+        extensions: [".js", ".json"],
+
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: '/node_modules',
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    },
+    // plugins: [
+    //     new UglifyJsPlugin({
+    //         exclude: [/\.min\.js$/gi] // skip pre-minified libs
+    //     })
+    // ],
     "target": "node"
 }
