@@ -42,16 +42,16 @@ More formally:
 
 | Operator | Meaning                              | Example                               |
 | -------- | ------------------------------------ | ------------------------------------- |
-| `==`     | Equals                               |                                       |
-| `!=`     | Not equals                           |                                       |
-| `>`      | Greater than                         |                                       |
-| `<`      | Less than                            |                                       |
-| `>=`     | Greater than or equal to             |                                       |
-| `<=`     | Less than or equal to                |                                       |
-| `@=`     | Contains                             |                                       |
-| `_=`     | Starts with                          |                                       |
-| `!@=`    | Does not Contains                    |                                       |
-| `!_=`    | Does not Starts with                 |                                       |
+| `==`     | Equals                               | `name==example`                       |
+| `!=`     | Not equals                           | `name!=example`                       |
+| `>`      | Greater than                         | `cost>2000`                           |
+| `<`      | Less than                            | `cost<2000`                           |
+| `>=`     | Greater than or equal to             | `cost>=2000`                          |
+| `<=`     | Less than or equal to                | `cost<=2000`                          |
+| `@=`     | Contains                             | `id@=a`                               |
+| `_=`     | Starts with                          | `email_=c`                            |
+| `!@=`    | Does not Contains                    | `email!@=mail.com`                    |
+| `!_=`    | Does not Starts with                 | `email!_=a`                           |
 | `[]`     | Only datetime, date between two date | `created_at[](2021/11/05-2021/11/12)` |
 
 ## Example
