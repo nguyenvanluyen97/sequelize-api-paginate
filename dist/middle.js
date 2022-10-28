@@ -1,1 +1,108 @@
-'use strict'; const _0x1876d6 = _0x13a4; function _0x52d1() { const _0x3cd3d1 = ['DD-MM-YYYY', 'filters', 'generateCondition', 'and', 'payload', 'pageSize', 'forEach', '4170129PXhvJc', '9715622whpXXr', 'currentPage', 'YYYY-MM-DD', '184662qUvJvZ', 'moment', '6077070dFRQVH', 'sequelize', 'sortField', 'generateConditionExtra', 'push', 'sortOrder', 'none', 'DD/MM/YYYY', '448576txWkPh', '5kgYouY', '2cfXkTc', 'isValid', 'length', '168ROEayL', 'includes', 'YYYY/MM/DD', 'keys', '278487ZHpypo', 'query', 'dateField', '37279370KmusxZ']; _0x52d1 = function () { return _0x3cd3d1; }; return _0x52d1(); } (function (_0x2b53de, _0x3b8121) { const _0x15401a = _0x13a4, _0x37eb13 = _0x2b53de(); while (!![]) { try { const _0x2d7c1b = parseInt(_0x15401a(0x1ff)) / 0x1 + -parseInt(_0x15401a(0x1e9)) / 0x2 * (parseInt(_0x15401a(0x1fb)) / 0x3) + parseInt(_0x15401a(0x1e7)) / 0x4 + parseInt(_0x15401a(0x1e8)) / 0x5 * (-parseInt(_0x15401a(0x1df)) / 0x6) + -parseInt(_0x15401a(0x1fc)) / 0x7 + -parseInt(_0x15401a(0x1ec)) / 0x8 * (-parseInt(_0x15401a(0x1f0)) / 0x9) + parseInt(_0x15401a(0x1f3)) / 0xa; if (_0x2d7c1b === _0x3b8121) break; else _0x37eb13['push'](_0x37eb13['shift']()); } catch (_0x25f67e) { _0x37eb13['push'](_0x37eb13['shift']()); } } }(_0x52d1, 0xd7c00)); function _0x13a4(_0xc2b7a7, _0x5c9710) { const _0x52d136 = _0x52d1(); return _0x13a4 = function (_0x13a494, _0x5e578b) { _0x13a494 = _0x13a494 - 0x1df; let _0x2852c3 = _0x52d136[_0x13a494]; return _0x2852c3; }, _0x13a4(_0xc2b7a7, _0x5c9710); } const buildCondition = require('./build-condition'), Op = require(_0x1876d6(0x1e0))['Op'], moment = require(_0x1876d6(0x200)); module['exports'] = function (_0x3491fb, _0x394369, _0x114c45) { const _0x1de210 = _0x1876d6, _0x505656 = { 'pageSize': _0x3491fb['query']['pageSize'] || null, 'sortField': _0x3491fb[_0x1de210(0x1f1)][_0x1de210(0x1e1)] || null, 'sortOrder': _0x3491fb[_0x1de210(0x1f1)][_0x1de210(0x1e4)] || null, 'currentPage': _0x3491fb[_0x1de210(0x1f1)]['currentPage'] || null, 'filters': _0x3491fb[_0x1de210(0x1f1)][_0x1de210(0x1f5)] || null, 'rawFilter': null, 'dateField': [] }; if (_0x505656['filters'] != null) { let _0x4f80b2 = 0x0, _0x3d7d91 = new Object(), _0x1dba88 = _0x505656[_0x1de210(0x1f5)] != null ? _0x505656['filters']['split'](',') : [], _0x35d614 = []; _0x1dba88[_0x1de210(0x1fa)](_0x3ef70d => { const _0x583ec9 = _0x1de210; if (_0x3ef70d[_0x583ec9(0x1ed)]('|')) { let _0x228358 = buildCondition[_0x583ec9(0x1e2)](_0x3ef70d); if (!_0x228358) return; if (_0x228358[_0x583ec9(0x1eb)] > 0x0) for (const _0x3767a9 of _0x228358) { if (moment(_0x3767a9[Object[_0x583ec9(0x1ef)](_0x3767a9)], [_0x583ec9(0x1ee), _0x583ec9(0x1fe), _0x583ec9(0x1e6), 'DD-MM-YYYY'], !![])[_0x583ec9(0x1ea)]() || moment(_0x3767a9[Object['keys'](_0x3767a9)], [_0x583ec9(0x1ee), _0x583ec9(0x1fe), _0x583ec9(0x1e6), _0x583ec9(0x1f4)], !![])) { _0x505656[_0x583ec9(0x1f2)]['push']({ 'opType': 'or', 'indexOp': _0x4f80b2 }); break; } } else (moment(_0x228358[Object['keys'](_0x228358)], [_0x583ec9(0x1ee), _0x583ec9(0x1fe), _0x583ec9(0x1e6), 'DD-MM-YYYY'], !![])[_0x583ec9(0x1ea)]() || moment(_0x228358[Object[_0x583ec9(0x1ef)](_0x228358)], [_0x583ec9(0x1ee), _0x583ec9(0x1fe), 'DD/MM/YYYY', _0x583ec9(0x1f4)], !![])) && _0x505656[_0x583ec9(0x1f2)][_0x583ec9(0x1e3)]({ 'opType': _0x583ec9(0x1e5), 'indexOp': _0x4f80b2 }); let _0x4778fc = { [Op['or']]: _0x228358 }; _0x35d614['push'](_0x4778fc); } else { let _0x44ef00 = buildCondition[_0x583ec9(0x1f6)](_0x3ef70d); if (!_0x44ef00) return; if (_0x44ef00['length'] > 0x0) for (const _0x3ff7b9 of _0x44ef00) { if (moment(_0x3ff7b9[Object[_0x583ec9(0x1ef)](_0x3ff7b9)], [_0x583ec9(0x1ee), _0x583ec9(0x1fe), _0x583ec9(0x1e6), _0x583ec9(0x1f4)], !![])[_0x583ec9(0x1ea)]() || moment(_0x3ff7b9[Object[_0x583ec9(0x1ef)](_0x3ff7b9)], ['YYYY/MM/DD', _0x583ec9(0x1fe), 'DD/MM/YYYY', 'DD-MM-YYYY'], !![])) { _0x505656['dateField'][_0x583ec9(0x1e3)]({ 'opType': _0x583ec9(0x1f7), 'indexOp': _0x4f80b2 }); break; } } else (moment(_0x44ef00[Object[_0x583ec9(0x1ef)](_0x44ef00)], [_0x583ec9(0x1ee), _0x583ec9(0x1fe), _0x583ec9(0x1e6), _0x583ec9(0x1f4)], !![])[_0x583ec9(0x1ea)]() || moment(_0x44ef00[Object[_0x583ec9(0x1ef)](_0x44ef00)], [_0x583ec9(0x1ee), _0x583ec9(0x1fe), _0x583ec9(0x1e6), 'DD-MM-YYYY'], !![])) && _0x505656['dateField'][_0x583ec9(0x1e3)]({ 'opType': _0x583ec9(0x1e5), 'indexOp': _0x4f80b2 }); _0x35d614[_0x583ec9(0x1e3)](_0x44ef00); } _0x4f80b2 += 0x1; }), _0x3d7d91 = { [Op['and']]: _0x35d614 }, _0x505656[_0x1de210(0x1f5)] = _0x3d7d91; } else _0x505656[_0x1de210(0x1f5)] = {}; _0x505656[_0x1de210(0x1f9)] = Number(_0x505656[_0x1de210(0x1f9)]); if (!_0x505656[_0x1de210(0x1fd)] || _0x505656[_0x1de210(0x1fd)] <= 0x0) _0x505656[_0x1de210(0x1fd)] = 0x1; if (!_0x505656[_0x1de210(0x1f9)] || _0x505656[_0x1de210(0x1f9)] <= 0x0) _0x505656[_0x1de210(0x1f9)] = 0xa; if (!_0x505656[_0x1de210(0x1e1)]) _0x505656[_0x1de210(0x1e1)] = null; if (!_0x505656['sortOrder']) _0x505656['sortOrder'] = null; _0x3491fb[_0x1de210(0x1f8)] = _0x505656, _0x114c45(); };
+'use strict'
+const buildCondition = require('./build-condition')
+const Op = require("sequelize").Op;
+const moment = require("moment");
+
+module.exports = function (req, res, next) {
+    const payload = {
+        pageSize: req.query.pageSize || null,
+        sortField: req.query.sortField || null,
+        sortOrder: req.query.sortOrder || null,
+        currentPage: req.query.currentPage || null,
+        filters: req.query.filters || null,
+        rawFilter: null,
+        dateField: []
+    }
+    if (payload.filters != null) {
+        let indexOp = 0;
+        let condition = new Object;
+        let arrFilters = payload.filters != null ? payload.filters.split(',') : [];
+        let conditionCheckedChild = [];
+        arrFilters.forEach(element => {
+            if (element.includes('|')) {
+                let objCondition = buildCondition.generateConditionExtra(element);
+                if (!objCondition) {
+                    return;
+                }
+
+                if (objCondition.length > 0) {
+                    for (const obj of objCondition) {
+                        if (moment(obj[Object.keys(obj)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()
+                        ) {
+                            payload.dateField.push({
+                                "opType": "or",
+                                "indexOp": indexOp,
+
+                            });
+                            break;
+                        }
+                    }
+
+                } else {
+                    if (moment(objCondition[Object.keys(objCondition)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()
+                    ) {
+                        payload.dateField.push({
+                            "opType": "none",
+                            "indexOp": indexOp,
+
+                        });
+
+                    }
+                }
+                let conditionNotOr = {
+                    [Op.or]: objCondition
+                };
+                conditionCheckedChild.push(conditionNotOr);
+
+            } else {
+                let conditionNotOr = buildCondition.generateCondition(element);
+                if (!conditionNotOr) {
+                    return;
+                }
+                if (conditionNotOr.length > 0) {
+                    for (const obj of conditionNotOr) {
+                        if (moment(obj[Object.keys(obj)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()
+                        ) {
+                            payload.dateField.push({
+                                "opType": "and",
+                                "indexOp": indexOp,
+
+                            });
+                            break;
+                        }
+                    }
+                } else {
+                    if (moment(conditionNotOr[Object.keys(conditionNotOr)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()
+                    ) {
+                        payload.dateField.push({
+                            "opType": "none",
+                            "indexOp": indexOp,
+
+                        });
+
+                    }
+                }
+
+                conditionCheckedChild.push(conditionNotOr);
+            }
+            indexOp += 1;
+        });
+
+        condition = {
+            [Op.and]: conditionCheckedChild
+        }
+        payload.filters = condition;
+    } else {
+        payload.filters = {};
+    }
+    //Fixed string
+    payload.pageSize = Number(payload.pageSize)
+
+    if (!payload.currentPage || payload.currentPage <= 0) payload.currentPage = 1;
+    if (!payload.pageSize || payload.pageSize <= 0) payload.pageSize = 10;
+    if (!payload.sortField) payload.sortField = null;
+    if (!payload.sortOrder) payload.sortOrder = null;
+
+    req.payload = payload;
+    next();
+}

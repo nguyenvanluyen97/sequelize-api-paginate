@@ -1,1 +1,171 @@
-'use strict'; const _0x12350b = _0x2542; (function (_0x380ffe, _0x51b74e) { const _0x4668e1 = _0x2542, _0x138e8b = _0x380ffe(); while (!![]) { try { const _0x1bf67a = -parseInt(_0x4668e1(0x183)) / 0x1 + -parseInt(_0x4668e1(0x166)) / 0x2 * (-parseInt(_0x4668e1(0x161)) / 0x3) + parseInt(_0x4668e1(0x16f)) / 0x4 * (parseInt(_0x4668e1(0x181)) / 0x5) + -parseInt(_0x4668e1(0x17d)) / 0x6 + -parseInt(_0x4668e1(0x17f)) / 0x7 + -parseInt(_0x4668e1(0x169)) / 0x8 + parseInt(_0x4668e1(0x177)) / 0x9; if (_0x1bf67a === _0x51b74e) break; else _0x138e8b['push'](_0x138e8b['shift']()); } catch (_0x4b565c) { _0x138e8b['push'](_0x138e8b['shift']()); } } }(_0x4449, 0x4b8c0)); function _0x4449() { const _0xeb964c = ['opType', 'DD/MM/YYYY', 'length', '9496206MEMWwi', 'constructor', 'key', 'getCorrectFormatTime', 'isValid', 'distinct', '2707380IKNPug', 'tableAttributes', '913220BBWYtJ', 'totalPages', '5SBPZtM', 'iLike', '437389MbAkyb', 'toUTCString', 'filters', 'indexOp', 'moment', 'YYYY-MM-DD', 'sortField', './build-condition', 'YYYY/MM/DD', 'DD-MM-YYYY', 'sequelize', 'substring', 'keys', 'DATE', '6WUdzKv', 'none', 'currentPage', 'pageSize', '\x2023:59\x20+00:00', '515362dBJpGf', 'format', 'splice', '4299920IDokdy', '\x2000:00\x20+00:00', 'findAndCountAll', 'sortOrder', 'type', 'and', '1182052vuauMS', 'between', 'subQuery', 'exports', 'ceil']; _0x4449 = function () { return _0xeb964c; }; return _0x4449(); } function _0x2542(_0x5cc216, _0x251932) { const _0x4449c1 = _0x4449(); return _0x2542 = function (_0x2542d9, _0x3eebad) { _0x2542d9 = _0x2542d9 - 0x161; let _0x5b3b23 = _0x4449c1[_0x2542d9]; return _0x5b3b23; }, _0x2542(_0x5cc216, _0x251932); } const Op = require(_0x12350b(0x18d))['Op'], moment = require(_0x12350b(0x187)), buildCondition = require(_0x12350b(0x18a)); module[_0x12350b(0x172)] = async function (_0x56fba1, _0x25fac5, _0x3a4e5d = [], _0x27f61b = ![], _0x5cb48a = !![], _0x34028d = !![], _0x41f5a7 = ![], _0x4a3ead = null) { const _0x476333 = _0x12350b; for (const _0x4ec390 of _0x25fac5['dateField']) { if (_0x4ec390[_0x476333(0x174)] == _0x476333(0x162)) { var _0x5359c7 = 0x0, _0x2bebd2 = _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x4ec390[_0x476333(0x186)]]; if (_0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)][Op['iLike']] != undefined) { if (moment(_0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)][Op[_0x476333(0x182)]][_0x476333(0x18e)](0x1, _0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)][Op['iLike']]['length'] - 0x1), [_0x476333(0x18b), _0x476333(0x188), _0x476333(0x175), _0x476333(0x18c)], !![])['isValid']()) { if (_0x56fba1[_0x476333(0x17e)][Object[_0x476333(0x18f)](_0x2bebd2)][_0x476333(0x16d)][_0x476333(0x178)]['key'] == _0x476333(0x190)) { _0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)] = _0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)][Op[_0x476333(0x182)]]['substring'](0x1, _0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)][Op['iLike']][_0x476333(0x176)] - 0x1); const _0x4d9351 = buildCondition[_0x476333(0x17a)](_0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)]); let _0x2fad9a = new Date(moment(_0x2bebd2[Object['keys'](_0x2bebd2)], _0x4d9351)[_0x476333(0x167)](_0x476333(0x18b)) + _0x476333(0x16a))[_0x476333(0x184)](), _0x4b76fa = new Date(moment(_0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)], _0x4d9351)[_0x476333(0x167)]('YYYY/MM/DD') + _0x476333(0x165))[_0x476333(0x184)](); _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x476333(0x168)](_0x4ec390[_0x476333(0x186)], 0x1, { [Object[_0x476333(0x18f)](_0x2bebd2)]: { [Op[_0x476333(0x170)]]: [_0x2fad9a, _0x4b76fa] } }); } else _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x476333(0x168)](_0x4ec390[_0x476333(0x186)], 0x1); } else _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x476333(0x168)](_0x4ec390[_0x476333(0x186)], 0x1); } else { if (moment(_0x2bebd2[Object['keys'](_0x2bebd2)], [_0x476333(0x18b), _0x476333(0x188), _0x476333(0x175), _0x476333(0x18c)], !![])[_0x476333(0x17b)]()) { if (_0x56fba1[_0x476333(0x17e)][Object[_0x476333(0x18f)](_0x2bebd2)][_0x476333(0x16d)]['constructor'][_0x476333(0x179)] == _0x476333(0x190)) { const _0x510b6f = buildCondition[_0x476333(0x17a)](_0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)]); let _0x35b12b = new Date(moment(_0x2bebd2[Object[_0x476333(0x18f)](_0x2bebd2)], _0x510b6f)[_0x476333(0x167)](_0x476333(0x18b)) + _0x476333(0x16a))[_0x476333(0x184)](), _0x45ae30 = new Date(moment(_0x2bebd2[Object['keys'](_0x2bebd2)], _0x510b6f)[_0x476333(0x167)]('YYYY/MM/DD') + _0x476333(0x165))['toUTCString'](); _0x25fac5[_0x476333(0x185)][Op['and']][_0x476333(0x168)](_0x4ec390[_0x476333(0x186)], 0x1, { [Object['keys'](_0x2bebd2)]: { [Op[_0x476333(0x170)]]: [_0x35b12b, _0x45ae30] } }); } else _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x476333(0x168)](_0x4ec390[_0x476333(0x186)], 0x1); } else { } } } if (_0x4ec390[_0x476333(0x174)] == 'or' && _0x25fac5[_0x476333(0x185)][Op['and']][_0x4ec390['indexOp']]) { var _0x5359c7 = 0x0; for (const _0x5881e4 of _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x4ec390['indexOp']][Op['or']]) { if (_0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)][Op[_0x476333(0x182)]] != undefined) { if (moment(_0x5881e4[Object['keys'](_0x5881e4)][Op[_0x476333(0x182)]][_0x476333(0x18e)](0x1, _0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)][Op['iLike']][_0x476333(0x176)] - 0x1), [_0x476333(0x18b), _0x476333(0x188), _0x476333(0x175), _0x476333(0x18c)], !![])[_0x476333(0x17b)]()) { if (_0x56fba1[_0x476333(0x17e)][Object['keys'](_0x5881e4)][_0x476333(0x16d)][_0x476333(0x178)]['key'] == _0x476333(0x190)) { _0x5881e4[Object['keys'](_0x5881e4)] = _0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)][Op[_0x476333(0x182)]][_0x476333(0x18e)](0x1, _0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)][Op[_0x476333(0x182)]][_0x476333(0x176)] - 0x1); const _0x7427db = buildCondition[_0x476333(0x17a)](_0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)]); let _0x3611d4 = new Date(moment(_0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)], _0x7427db)[_0x476333(0x167)](_0x476333(0x18b)) + _0x476333(0x16a))['toUTCString'](), _0x21b0d9 = new Date(moment(_0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)], _0x7427db)['format']('YYYY/MM/DD') + '\x2023:59\x20+00:00')[_0x476333(0x184)](); _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x4ec390[_0x476333(0x186)]][Op['or']][_0x476333(0x168)](_0x5359c7, 0x1, { [Object[_0x476333(0x18f)](_0x5881e4)]: { [Op[_0x476333(0x170)]]: [_0x3611d4, _0x21b0d9] } }); } else delete _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x4ec390[_0x476333(0x186)]][Op['or']][_0x5359c7]; } } else { if (moment(_0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)], [_0x476333(0x18b), _0x476333(0x188), 'DD/MM/YYYY', _0x476333(0x18c)], !![])[_0x476333(0x17b)]()) { if (_0x56fba1[_0x476333(0x17e)][Object[_0x476333(0x18f)](_0x5881e4)][_0x476333(0x16d)][_0x476333(0x178)][_0x476333(0x179)] == _0x476333(0x190)) { const _0x3189f4 = buildCondition[_0x476333(0x17a)](_0x5881e4[Object['keys'](_0x5881e4)]); let _0x25b0ef = new Date(moment(_0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)], _0x3189f4)[_0x476333(0x167)](_0x476333(0x18b)) + _0x476333(0x16a))[_0x476333(0x184)](), _0x247027 = new Date(moment(_0x5881e4[Object[_0x476333(0x18f)](_0x5881e4)], _0x3189f4)[_0x476333(0x167)](_0x476333(0x18b)) + _0x476333(0x165))[_0x476333(0x184)](); _0x25fac5[_0x476333(0x185)][Op[_0x476333(0x16e)]][_0x4ec390['indexOp']][Op['or']]['splice'](_0x5359c7, 0x1, { [Object[_0x476333(0x18f)](_0x5881e4)]: { [Op['between']]: [_0x25b0ef, _0x247027] } }); } else delete _0x25fac5['filters'][Op[_0x476333(0x16e)]][_0x4ec390[_0x476333(0x186)]][Op['or']][_0x5359c7]; } } _0x5359c7 += 0x1; } } } let _0x32f7ea = { 'limit': _0x25fac5[_0x476333(0x164)], 'offset': (_0x25fac5[_0x476333(0x163)] - 0x1) * _0x25fac5[_0x476333(0x164)] || 0x0, 'order': _0x25fac5[_0x476333(0x189)] != null ? [[_0x25fac5[_0x476333(0x189)], _0x25fac5[_0x476333(0x16c)]]] : [], 'include': _0x3a4e5d, 'where': _0x25fac5[_0x476333(0x185)], 'raw': _0x5cb48a, 'nest': _0x34028d }; if (_0x41f5a7) _0x32f7ea[_0x476333(0x17c)] = _0x41f5a7; if (_0x27f61b) _0x32f7ea['hierarchy'] = !![]; if (_0x4a3ead == !![] || _0x4a3ead == ![]) _0x32f7ea[_0x476333(0x171)] = _0x4a3ead; var _0x3023b5 = await _0x56fba1[_0x476333(0x16b)](_0x32f7ea); return _0x3023b5[_0x476333(0x180)] = Math[_0x476333(0x173)](_0x3023b5['count'] / _0x25fac5[_0x476333(0x164)]), _0x3023b5[_0x476333(0x163)] = _0x25fac5[_0x476333(0x163)], _0x3023b5; };
+'use strict'
+const Op = require("sequelize").Op;
+const moment = require("moment");
+const buildCondition = require('./build-condition')
+module.exports = async function (model, payload, includeModels = [], isHierarchy = false, raw = true, nest = true, distinct = false, subQuery = null) {
+    for (const op of payload.dateField) {
+        if (op["opType"] == "none") {
+            var i = 0;
+            var condition = payload["filters"][Op.and][op["indexOp"]];
+            if (condition[Object.keys(condition)][Op.iLike] != undefined) {
+                if (moment(condition[Object.keys(condition)][Op.iLike].substring(1, condition[Object.keys(condition)][Op.iLike].length - 1), ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()) {
+                    if (model.tableAttributes[Object.keys(condition)].type.constructor.key == "DATE") {
+                        condition[Object.keys(condition)] = condition[Object.keys(condition)][Op.iLike].substring(1, condition[Object.keys(condition)][Op.iLike].length - 1)
+
+                        const formatDate = buildCondition.getCorrectFormatTime(condition[Object.keys(condition)]);
+                        // let start_date = new Date(condition[Object.keys(condition)] + " 00:00 +00:00").toUTCString();
+                        // let end_date = new Date(condition[Object.keys(condition)] + " 23:59 +00:00").toUTCString();
+
+                        let start_date = new Date(moment(condition[Object.keys(condition)], formatDate).format('YYYY/MM/DD') + " 00:00 +00:00").toUTCString();
+                        let end_date = new Date(moment(condition[Object.keys(condition)], formatDate).format('YYYY/MM/DD') + " 23:59 +00:00").toUTCString();
+
+                        //  delete payload["filters"][Op.and][op["indexOp"]];//[i];
+                        payload["filters"][Op.and].splice(op["indexOp"], 1, {
+                            [Object.keys(condition)]: {
+                                [Op.between]: [start_date, end_date]
+                            }
+                        });
+
+                        // payload["filters"][Op.and].push(
+                        //     {
+                        //         [Object.keys(condition)]: {
+                        //             [Op.between]: [start_date, end_date]
+                        //         }
+                        //     }
+                        // )
+                    } else {
+                        //delete payload["filters"][Op.and][op["indexOp"]][Op.or][i];
+                        payload["filters"][Op.and].splice(op["indexOp"], 1);
+                    }
+                } else {
+                    payload["filters"][Op.and].splice(op["indexOp"], 1);
+                }
+            }
+            else {
+                if (moment(condition[Object.keys(condition)]
+                    , ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()) {
+                    if (model.tableAttributes[Object.keys(condition)].type.constructor.key == "DATE") {
+                        const formatDate = buildCondition.getCorrectFormatTime(condition[Object.keys(condition)]);
+                        let start_date = new Date(moment(condition[Object.keys(condition)], formatDate).format('YYYY/MM/DD') + " 00:00 +00:00").toUTCString();
+                        let end_date = new Date(moment(condition[Object.keys(condition)], formatDate).format('YYYY/MM/DD') + " 23:59 +00:00").toUTCString();
+                        // let start_date = new Date(condition[Object.keys(condition)] + " 00:00 +00:00").toUTCString();
+                        // let end_date = new Date(condition[Object.keys(condition)] + " 23:59 +00:00").toUTCString();
+                        //delete payload["filters"][Op.and][op["indexOp"]];
+                        payload["filters"][Op.and].splice(op["indexOp"], 1, {
+                            [Object.keys(condition)]: {
+                                [Op.between]: [start_date, end_date]
+                            }
+                        });
+                        // payload["filters"][Op.and].push(
+                        //     {
+                        //         [Object.keys(condition)]: {
+                        //             [Op.between]: [start_date, end_date]
+                        //         }
+                        //     }
+                        // )
+
+                    } else {
+                        //delete payload["filters"][Op.and][op["indexOp"]];
+                        payload["filters"][Op.and].splice(op["indexOp"], 1);
+                    }
+                } else {
+                    // console.log('vay day 666')
+                }
+            }
+
+        }
+        if (op["opType"] == "or" && payload["filters"][Op.and][op["indexOp"]]) {
+            var i = 0;
+            for (const condition of payload["filters"][Op.and][op["indexOp"]][Op.or]) {
+                if (condition[Object.keys(condition)][Op.iLike] != undefined) {
+                    if (moment(condition[Object.keys(condition)][Op.iLike].substring(1, condition[Object.keys(condition)][Op.iLike].length - 1), ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()) {
+                        if (model.tableAttributes[Object.keys(condition)].type.constructor.key == "DATE") {
+                            condition[Object.keys(condition)] = condition[Object.keys(condition)][Op.iLike].substring(1, condition[Object.keys(condition)][Op.iLike].length - 1)
+
+                            // let start_date = new Date(condition[Object.keys(condition)] + " 00:00 +00:00").toUTCString();
+                            // let end_date = new Date(condition[Object.keys(condition)] + " 23:59 +00:00").toUTCString();
+
+                            const formatDate = buildCondition.getCorrectFormatTime(condition[Object.keys(condition)]);
+                            let start_date = new Date(moment(condition[Object.keys(condition)], formatDate).format('YYYY/MM/DD') + " 00:00 +00:00").toUTCString();
+                            let end_date = new Date(moment(condition[Object.keys(condition)], formatDate).format('YYYY/MM/DD') + " 23:59 +00:00").toUTCString();
+
+                            //delete payload["filters"][Op.and][op["indexOp"]][Op.or][i];
+                            payload["filters"][Op.and][op["indexOp"]][Op.or].splice(i, 1, {
+                                [Object.keys(condition)]: {
+                                    [Op.between]: [start_date, end_date]
+                                }
+                            });
+                            // payload["filters"][Op.and][op["indexOp"]][Op.or].push(
+                            //     {
+                            //         [Object.keys(condition)]: {
+                            //             [Op.between]: [start_date, end_date]
+                            //         }
+                            //     }
+                            // )
+                        } else {
+                            delete payload["filters"][Op.and][op["indexOp"]][Op.or][i];
+                            //payload["filters"][Op.and][op["indexOp"]][Op.or].splice(i, 1)
+                        }
+                    }
+
+                }
+                // ********
+                else {
+                    if (moment(condition[Object.keys(condition)], ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"], true).isValid()) {
+                        if (model.tableAttributes[Object.keys(condition)].type.constructor.key == "DATE") {
+                            // let start_date = new Date(condition[Object.keys(condition)] + " 00:00 +00:00").toUTCString();
+                            // let end_date = new Date(condition[Object.keys(condition)] + " 23:59 +00:00").toUTCString();
+
+                            const formatDate = buildCondition.getCorrectFormatTime(condition[Object.keys(condition)]);
+                            let start_date = new Date(moment(condition[Object.keys(condition)], formatDate).format('YYYY/MM/DD') + " 00:00 +00:00").toUTCString();
+                            let end_date = new Date(moment(condition[Object.keys(condition)], formatDate).format('YYYY/MM/DD') + " 23:59 +00:00").toUTCString();
+
+                            //delete payload["filters"][Op.and][op["indexOp"]][Op.or][i];
+                            payload["filters"][Op.and][op["indexOp"]][Op.or].splice(i, 1,
+                                {
+                                    [Object.keys(condition)]: {
+                                        [Op.between]: [start_date, end_date]
+                                    }
+                                });
+                            // payload["filters"][Op.and][op["indexOp"]][Op.or].push(
+                            //     {
+                            //         [Object.keys(condition)]: {
+                            //             [Op.between]: [start_date, end_date]
+                            //         }
+                            //     }
+                            // )
+                        } else {
+                            delete payload["filters"][Op.and][op["indexOp"]][Op.or][i];
+                            //payload["filters"][Op.and][op["indexOp"]][Op.or].splice(i, 1)
+                        }
+                    }
+                }
+
+                i += 1;
+            }
+        }
+
+    }
+
+    let objQuery = {
+        limit: payload.pageSize,
+        offset: (payload.currentPage - 1) * payload.pageSize || 0,
+        order: payload.sortField != null ? [
+            [payload.sortField, payload.sortOrder]
+        ] : [],
+        include: includeModels,
+        where: payload.filters,
+        raw,
+        nest
+    };
+    if (distinct)
+        objQuery["distinct"] = distinct;
+    if (isHierarchy)
+        objQuery["hierarchy"] = true;
+    if (subQuery == true || subQuery == false)
+        objQuery["subQuery"] = subQuery;
+    var result = await model.findAndCountAll(objQuery);
+    result['totalPages'] = Math.ceil(result['count'] / payload.pageSize);
+    result['currentPage'] = payload.currentPage;
+    return result;
+}

@@ -1,1 +1,189 @@
-function _0x32fa() { const _0x2f8e9e = ['YYYY/MM/DD', 'notLike', '56901tFpqqK', 'Does\x20not\x20Contains', '48PHOchR', 'includes', 'Does\x20not\x20Starts\x20with', 'Less\x20than\x20or\x20equal\x20to', '877278LYTrvn', 'iLike', '1028brkCUD', 'length', 'DD/MM/YYYY', 'Starts\x20with', 'not', '5310Yabkol', 'Only\x20datetime,\x20date\x20between\x20two\x20date', 'operator', 'substring', 'trim', '!@=', 'gte', 'isValid', 'DD-MM-YYYY', 'join', 'log', 'between', 'Not\x20equals', '1038591nmBXny', 'startsWith', '56inmcfV', 'Contains', 'notILike', 'YYYY-MM-DD', '375ZPDgNK', '3784besEEA', '276KmSxKh', '2456xYGIht', '1962bnJNHX', 'forEach', 'Equals', 'split', '3582010LEHUmX', 'push', '!_=']; _0x32fa = function () { return _0x2f8e9e; }; return _0x32fa(); } const _0x129e85 = _0x5c57; (function (_0x5b3b18, _0x48fd44) { const _0x564944 = _0x5c57, _0x5e68fa = _0x5b3b18(); while (!![]) { try { const _0x1c949c = -parseInt(_0x564944(0xa6)) / 0x1 * (parseInt(_0x564944(0xbb)) / 0x2) + parseInt(_0x564944(0xaa)) / 0x3 * (-parseInt(_0x564944(0xa9)) / 0x4) + -parseInt(_0x564944(0xae)) / 0x5 + -parseInt(_0x564944(0xb9)) / 0x6 * (-parseInt(_0x564944(0xcf)) / 0x7) + parseInt(_0x564944(0xb5)) / 0x8 * (parseInt(_0x564944(0xcd)) / 0x9) + parseInt(_0x564944(0xc0)) / 0xa * (parseInt(_0x564944(0xa7)) / 0xb) + parseInt(_0x564944(0xa8)) / 0xc * (-parseInt(_0x564944(0xb3)) / 0xd); if (_0x1c949c === _0x48fd44) break; else _0x5e68fa['push'](_0x5e68fa['shift']()); } catch (_0x493c09) { _0x5e68fa['push'](_0x5e68fa['shift']()); } } }(_0x32fa, 0x9aa27)); const Op = require('sequelize')['Op'], moment = require('moment'), listOperators = [{ 'operator': '==', 'meaning': _0x129e85(0xac) }, { 'operator': '!=', 'meaning': _0x129e85(0xcc) }, { 'operator': '>', 'meaning': 'Greater\x20than' }, { 'operator': '<', 'meaning': 'Less\x20than' }, { 'operator': '>=', 'meaning': 'Greater\x20than\x20or\x20equal\x20to' }, { 'operator': '<=', 'meaning': _0x129e85(0xb8) }, { 'operator': '@=', 'meaning': _0x129e85(0xa3) }, { 'operator': '_=', 'meaning': _0x129e85(0xbe) }, { 'operator': _0x129e85(0xc5), 'meaning': _0x129e85(0xb4) }, { 'operator': '!_=', 'meaning': _0x129e85(0xb7) }, { 'operator': '[]', 'meaning': _0x129e85(0xc1) }]; function generateConditionExtra(_0x3edb61) { const _0x4007d4 = _0x129e85; try { let _0x43818f = ''; listOperators['forEach'](_0x3586a6 => { const _0x2605e3 = _0x5c57; _0x3edb61[_0x2605e3(0xb6)](_0x3586a6[_0x2605e3(0xc2)]) && (_0x43818f = _0x3586a6['operator']); }); let _0x3673f3 = _0x3edb61[_0x4007d4(0xad)](_0x43818f); _0x3673f3[0x0] = _0x3673f3[0x0][_0x4007d4(0xc4)](), _0x3673f3[0x1] = _0x3673f3[0x1]['trim'](); if (!_0x3673f3[0x1]) return null; let _0x225f0d = _0x3673f3[0x1]['split']('(')[_0x4007d4(0xc9)](''); _0x225f0d = _0x225f0d[_0x4007d4(0xad)](')')[_0x4007d4(0xc9)](''), _0x225f0d = _0x225f0d['split']('|'); let _0x352dc6 = [], _0x2dd384 = []; if (_0x3673f3[0x0][_0x4007d4(0xb6)]('|')) { let _0x3751b7 = getBetweenConfition(_0x3673f3[0x0]); _0x2dd384 = _0x3751b7['split']('|'); } else _0x2dd384['push'](_0x3673f3[0x0]); return _0x2dd384[_0x4007d4(0xab)](_0x340c6a => { _0x225f0d['forEach'](_0x433245 => { const _0x3d8e42 = _0x5c57; let _0x21a50f = [_0x340c6a, _0x433245[_0x3d8e42(0xc4)]()], _0xdad776 = genCondition(_0x21a50f, _0x43818f); _0x352dc6[_0x3d8e42(0xaf)](_0xdad776); }); }), _0x352dc6; } catch (_0x311dc2) { return console[_0x4007d4(0xca)](_0x311dc2), {}; } } function _0x5c57(_0x3c3c9b, _0x560200) { const _0x32faf3 = _0x32fa(); return _0x5c57 = function (_0x5c573c, _0x5d122f) { _0x5c573c = _0x5c573c - 0xa3; let _0x32d75a = _0x32faf3[_0x5c573c]; return _0x32d75a; }, _0x5c57(_0x3c3c9b, _0x560200); } function getBetweenConfition(_0x2b71b4) { const _0x2355ea = _0x129e85; return _0x2b71b4[_0x2355ea(0xc3)](_0x2b71b4['indexOf']('(') + 0x1, _0x2b71b4['lastIndexOf'](')'))[_0x2355ea(0xc4)](); } function generateCondition(_0x29580d) { const _0x1d34c7 = _0x129e85; try { let _0x17c780 = ''; listOperators[_0x1d34c7(0xab)](_0x4b54a0 => { const _0x4ca02c = _0x1d34c7; _0x29580d['includes'](_0x4b54a0['operator']) && (_0x17c780 = _0x4b54a0[_0x4ca02c(0xc2)]); }); let _0x3aa469 = _0x29580d[_0x1d34c7(0xad)](_0x17c780); _0x3aa469[0x0] = _0x3aa469[0x0][_0x1d34c7(0xc4)](), _0x3aa469[0x1] = _0x3aa469[0x1][_0x1d34c7(0xc4)](); if (!_0x3aa469[0x1]) return null; let _0x49216b = genCondition(_0x3aa469, _0x17c780); return _0x49216b; } catch (_0x49b735) { return {}; } } function genCondition(_0x11b097, _0x497d1d) { const _0x39613a = _0x129e85; let _0x3dd65e = {}, _0x3e070c = _0x11b097[0x0]; _0x3e070c['includes']('.') && (_0x3e070c = '$' + _0x3e070c + '$'); let _0x1ed96f = _0x11b097[0x1]; if (_0x1ed96f == 'null') _0x1ed96f = null; switch (_0x497d1d) { case '==': _0x3dd65e[_0x3e070c] = _0x1ed96f; break; case '!=': _0x3dd65e[_0x3e070c] = { [Op[_0x39613a(0xbf)]]: _0x1ed96f }; break; case '>': _0x3dd65e[_0x3e070c] = { [Op['gt']]: _0x1ed96f }; break; case '<': _0x3dd65e[_0x3e070c] = { [Op['lt']]: _0x1ed96f }; break; case '>=': _0x3dd65e[_0x3e070c] = { [Op[_0x39613a(0xc6)]]: _0x1ed96f }; break; case '<=': _0x3dd65e[_0x3e070c] = { [Op['lte']]: _0x1ed96f }; break; case '@=': _0x3dd65e[_0x3e070c] = { [Op[_0x39613a(0xba)]]: '%' + _0x1ed96f + '%' }; break; case '_=': _0x3dd65e[_0x3e070c] = { [Op[_0x39613a(0xce)]]: _0x1ed96f }; break; case _0x39613a(0xc5): _0x3dd65e[_0x3e070c] = { [Op[_0x39613a(0xb2)]]: '%' + _0x1ed96f + '%' }; break; case _0x39613a(0xb0): _0x3dd65e[_0x3e070c] = { [Op[_0x39613a(0xa4)]]: '%' + _0x1ed96f }; break; case '[]': const _0x1e70c0 = getBetweenConfition(_0x1ed96f), _0x51d4cb = _0x1e70c0['split']('-'), _0x3c2016 = new Date(_0x51d4cb[0x0]), _0x1619f2 = new Date(_0x51d4cb[0x1]); _0x3dd65e[_0x3e070c] = { [Op[_0x39613a(0xcb)]]: [_0x3c2016, _0x1619f2] }; break; default: break; }return _0x3dd65e; } function getCorrectFormatTime(_0x50c37e) { const _0x4b6328 = _0x129e85, _0x83ffeb = [_0x4b6328(0xb1), _0x4b6328(0xa5), _0x4b6328(0xbd), _0x4b6328(0xc8)]; for (let _0x1cf3c5 = 0x0; _0x1cf3c5 < _0x83ffeb[_0x4b6328(0xbc)]; _0x1cf3c5++) { const _0x248a85 = _0x83ffeb[_0x1cf3c5]; if (moment(_0x50c37e, _0x248a85, !![])[_0x4b6328(0xc7)]()) return _0x248a85; } return null; } module['exports'] = { 'generateCondition': generateCondition, 'generateConditionExtra': generateConditionExtra, 'getCorrectFormatTime': getCorrectFormatTime };
+
+const Op = require("sequelize").Op;
+const moment = require("moment");
+
+const listOperators = [
+    { operator: '==', meaning: 'Equals' },
+    { operator: '!=', meaning: 'Not equals' },
+    { operator: '>', meaning: 'Greater than' },
+    { operator: '<', meaning: 'Less than' },
+    { operator: '>=', meaning: 'Greater than or equal to' },
+    { operator: '<=', meaning: 'Less than or equal to' },
+    { operator: '@=', meaning: 'Contains' },
+    { operator: '_=', meaning: 'Starts with' },
+    { operator: '!@=', meaning: 'Does not Contains' },
+    { operator: '!_=', meaning: 'Does not Starts with' },
+    { operator: '[]', meaning: 'Only datetime, date between two date' }
+]
+
+function generateConditionExtra(params) {
+
+    try {
+        let character = '';
+        listOperators.forEach(element => {
+            if (params.includes(element.operator)) {
+
+                character = element.operator;
+            }
+        });
+        let arrLeftRight = params.split(character);
+
+        arrLeftRight[0] = arrLeftRight[0].trim();
+        arrLeftRight[1] = arrLeftRight[1].trim();
+        if (!arrLeftRight[1]) {
+            return null;
+        }
+
+        let conditionRight = arrLeftRight[1].split("(").join("");
+        conditionRight = conditionRight.split(")").join("");
+        conditionRight = conditionRight.split("|");
+
+        let conditionReturn = [];
+        let arr = [];
+        if (arrLeftRight[0].includes("|")) {
+            let str = getBetweenConfition(arrLeftRight[0]);
+            arr = str.split("|");
+        } else {
+            arr.push(arrLeftRight[0]);
+        }
+
+
+        arr.forEach(element => {
+            conditionRight.forEach(right => {
+                let arrAppend = [element, right.trim()]
+                let obj = genCondition(arrAppend, character);
+                conditionReturn.push(obj);
+            });
+        });
+        return conditionReturn;
+    }
+    catch (ex) {
+        console.log(ex)
+        return {};
+    }
+}
+
+function getBetweenConfition(str) {
+    return str.substring(
+        str.indexOf("(") + 1,
+        str.lastIndexOf(")")
+    ).trim();
+}
+
+function generateCondition(params) {
+    try {
+        let character = '';
+        listOperators.forEach(element => {
+
+            if (params.includes(element.operator)) {
+
+                character = element.operator;
+            }
+        });
+        let arrLeftRight = params.split(character);
+        arrLeftRight[0] = arrLeftRight[0].trim();
+        arrLeftRight[1] = arrLeftRight[1].trim();
+        if (!arrLeftRight[1]) {
+            return null;
+        }
+        let conditionReturn = genCondition(arrLeftRight, character);
+
+        return conditionReturn;
+    } catch (ex) {
+        return {};
+    }
+}
+
+function genCondition(arrLeftRight, character) {
+
+    let conditionReturn = {};
+
+    let conditionLeft = arrLeftRight[0];
+    if (conditionLeft.includes('.')) {
+        conditionLeft = "$" + conditionLeft + "$";
+    }
+
+    let conditionRight = arrLeftRight[1];
+    if (conditionRight == 'null')
+        conditionRight = null;
+
+    switch (character) {
+        case '==':
+            conditionReturn[conditionLeft] = conditionRight;
+            break;
+        case '!=':
+            conditionReturn[conditionLeft] = {
+                [Op.not]: conditionRight
+            };
+            break;
+        case '>':
+            conditionReturn[conditionLeft] = {
+                [Op.gt]: conditionRight
+            };
+            break;
+        case '<':
+            conditionReturn[conditionLeft] = {
+                [Op.lt]: conditionRight
+            };
+            break;
+        case '>=':
+            conditionReturn[conditionLeft] = {
+                [Op.gte]: conditionRight
+            };
+            break;
+        case '<=':
+            conditionReturn[conditionLeft] = {
+                [Op.lte]: conditionRight
+            };
+            break;
+        case '@=':
+            conditionReturn[conditionLeft] = {
+                [Op.iLike]: "%" + conditionRight + "%"
+            };
+            break;
+        case '_=':
+            conditionReturn[conditionLeft] = {
+                [Op.startsWith]: conditionRight
+            };
+            break;
+        case '!@=':
+            conditionReturn[conditionLeft] = {
+                [Op.notLike]: "%" + conditionRight + "%"
+            };
+            break;
+        case '!_=':
+            conditionReturn[conditionLeft] = {
+                [Op.notILike]: "%" + conditionRight
+            };
+            break;
+        case '[]':
+            const valSearch = getBetweenConfition(conditionRight);
+            const arrStartEnd = valSearch.split('-');
+            const start = new Date(arrStartEnd[0]);
+            const end = new Date(arrStartEnd[1]);
+            conditionReturn[conditionLeft] = {
+                [Op.between]: [start, end]
+            };
+            break;
+        default:
+            break;
+    }
+    return conditionReturn;
+}
+
+function getCorrectFormatTime(value) {
+    const arrayFormat = ["YYYY/MM/DD", "YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY"];
+    for (let index = 0; index < arrayFormat.length; index++) {
+        const element = arrayFormat[index];
+        if (moment(value, element, true).isValid()) {
+            return element;
+        }
+    }
+    return null;
+}
+
+module.exports = {
+    generateCondition: generateCondition,
+    generateConditionExtra: generateConditionExtra,
+    getCorrectFormatTime: getCorrectFormatTime
+};
