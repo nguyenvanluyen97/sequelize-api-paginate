@@ -204,10 +204,10 @@ module.exports = async function (
       payload.sortField != null ? [[payload.sortField, payload.sortOrder]] : [],
     include: includeModels,
     where: payload.filters,
-    attributes: payload.attributes || [],
     raw,
     nest,
   };
+  if (payload.attributes) objQuery["attributes"] = payload.attributes;
   if (distinct) objQuery["distinct"] = distinct;
   if (isHierarchy) objQuery["hierarchy"] = true;
   if (subQuery == true || subQuery == false) objQuery["subQuery"] = subQuery;
